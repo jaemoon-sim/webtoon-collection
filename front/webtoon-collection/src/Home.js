@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
+import GridComicElem from './GridComicElem.js'
+import data from './data/favorite_unread.js'
+import "./App.css"
+
+const grid = data.favorites.map((item, i)=>{
+  return (
+    <GridComicElem comic={item}/>
+  )
+})
 
 class Home extends Component {
   render() {
     return (
-      <div className="Home">
-        <h1>Home</h1>
-        <p> place holding lorem ipsum shit </p>
+      <div className="wrapper">
+        {
+          grid
+        }
       </div>
     );
   }
 }
+
 export default Home;
